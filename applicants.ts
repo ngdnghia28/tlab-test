@@ -18,10 +18,10 @@ function readFileV1(filename: string): Case[] {
   }
 
   const file = readFileSync(filename, "utf-8");
-  const [caseCounttr, ...lines] = file.split("\n");
-  const caseCount = +caseCounttr;
+  const [caseCountStr, ...lines] = file.split("\n");
+  const caseCount = +caseCountStr;
 
-  assert(+caseCount === lines.length / 2);
+  assert(caseCount === lines.length / 2);
 
   const cases = [];
   for (let i = 0; i < caseCount; i++) {
